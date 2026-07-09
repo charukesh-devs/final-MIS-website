@@ -127,7 +127,7 @@ app.post(
       }
 
       const result = analyzeReconciliation(misFile.buffer, glFile.buffer, threshold);
-      res.json(result);
+res.json({ reconciliation: result });
     } catch (err) {
       console.error('Reconciliation error:', err);
       res.status(500).json({ error: 'Failed to process reconciliation' });
