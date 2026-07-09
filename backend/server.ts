@@ -121,8 +121,7 @@ app.post(
       const files = req.files as Record<string, Express.Multer.File[]>;
       const misFile = files?.misFile?.[0];
       const glFile = files?.glFile?.[0];
-      const threshold = parseFloat(req.body?.materialityThreshold) || 2.0;
-
+      const threshold = parseFloat(req.body?.materiality) || 2.0;
       if (!misFile || !glFile) {
         return res.status(400).json({ error: 'Both misFile and glFile are required' });
       }
